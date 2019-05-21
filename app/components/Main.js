@@ -7,6 +7,9 @@ class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>- NOTER -</Text>
+        </View>
       </View>
     )
   }
@@ -14,6 +17,7 @@ class Main extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
   },
 });
 
