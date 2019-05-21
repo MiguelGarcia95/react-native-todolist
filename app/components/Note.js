@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
-class Note extends Component {
-  render() {
-    return (
-      <View key={this.props.keyval} style={styles.note}>
-        <Text style={styles.noteText}>{this.props.val.date}</Text>
-        <Text style={styles.noteText}>{this.props.val.text}</Text>
+const Note = ({keyval, val, deleteMethod}) => {
+  return (
+    <View key={keyval} style={styles.note}>
+      <Text style={styles.noteText}>{val.date}</Text>
+      <Text style={styles.noteText}>{val.text}</Text>
 
-        <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
-          <Text style={styles.noteDeleteText}>D</Text>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => deleteMethod(keyval)} style={styles.noteDelete}>
+        <Text style={styles.noteDeleteText}>D</Text>
+      </TouchableOpacity>
 
-      </View>
-    )
-  }
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
