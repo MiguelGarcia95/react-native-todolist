@@ -16,11 +16,14 @@ class Main extends Component {
   addNote = () => {
     if (this.state.noteText) {
       let d = new Date();
-      let noteArray = this.state.noteArray.push({
-        'date': `${ d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`,
+      this.state.noteArray.push({
+        date: `${ d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`,
         text: this.state.noteText
       })
-      this.setState({noteArray, noteText: ''});
+      this.setState({
+        noteArray: this.state.noteArray, 
+        noteText: ''
+      });
     }
   }
 
@@ -37,7 +40,7 @@ class Main extends Component {
           <Text style={styles.headerText}>- NOTER -</Text>
         </View>
         <ScrollView style={styles.scrollContainer}>
-
+          {this.displayNotes(this.state.noteArray)}
         </ScrollView>
 
         <View style={styles.footer}>
