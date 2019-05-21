@@ -63,6 +63,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#252525',
     borderTopWidth: 2,
     borderTopColor: '#ededed'
+  },
+  addButton: {
+    position: 'absolute',
+    zIndex: 11,
+    right: 20,
+    bottom: 90,
+    backgroundColor: '#e91e63',
+    width: 90,
+    height: 90,
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 8
+  },
+  addButtonText: {
+    color: '#fff',
+    fontSize: 24
   }
 });
 
