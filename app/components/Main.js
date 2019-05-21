@@ -11,7 +11,10 @@ class Main extends Component {
   }
 
   deleteNoteKey = key => {
-    
+  }
+
+  addNote = () => {
+    alert('text')
   }
 
   displayNotes = (notes) => {
@@ -36,12 +39,14 @@ class Main extends Component {
             placeholder={'>note'} 
             placeholderTextColor='white' 
             underlineColorAndroid='transparent'
+            onChangeText={(noteText) => this.setState({noteText})}
+            value={this.state.noteText}
           >
 
           </TextInput>
         </View>
 
-        <TouchableOpacity style={styles.addButton}>
+        <TouchableOpacity onPress={this.addNote} style={styles.addButton}>
           <Text style={styles.addButtonText}>+</Text>
         </TouchableOpacity>
       </View>
