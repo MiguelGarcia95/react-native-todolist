@@ -2,8 +2,24 @@ import React, { Component } from 'react'
 import { 
   StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity 
 } from 'react-native'
+import Note from './Note';
 
 class Main extends Component {
+  state = {
+    noteArray: [],
+    noteText: ''
+  }
+
+  deleteNoteKey = key => {
+    
+  }
+
+  displayNotes = (notes) => {
+    return notes.map((note, key) => {
+      return <Note key={key} keyval={key} val={note} deleteMethod={this.deleteNoteKey} />
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -24,7 +40,7 @@ class Main extends Component {
 
           </TextInput>
         </View>
-        
+
         <TouchableOpacity style={styles.addButton}>
           <Text style={styles.addButtonText}>+</Text>
         </TouchableOpacity>
