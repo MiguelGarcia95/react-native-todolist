@@ -10,6 +10,15 @@ class Main extends Component {
         <View style={styles.header}>
           <Text style={styles.headerText}>- NOTER -</Text>
         </View>
+        <ScrollView style={styles.scrollContainer}>
+
+        </ScrollView>
+
+        <View style={styles.footer}>
+          <TextInput styles={styles.textInput} placeholder={'>note'} placeholderTextColor='white' underlineColorAndroid='transparent'>
+
+          </TextInput>
+        </View>
       </View>
     )
   }
