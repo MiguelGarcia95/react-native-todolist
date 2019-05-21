@@ -15,7 +15,12 @@ class Main extends Component {
         </ScrollView>
 
         <View style={styles.footer}>
-          <TextInput styles={styles.textInput} placeholder={'>note'} placeholderTextColor='white' underlineColorAndroid='transparent'>
+          <TextInput 
+            styles={styles.textInput} 
+            placeholder={'>note'} 
+            placeholderTextColor='white' 
+            underlineColorAndroid='transparent'
+          >
 
           </TextInput>
         </View>
