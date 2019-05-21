@@ -3,6 +3,7 @@ import {
   StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity 
 } from 'react-native'
 import Note from './Note';
+import { regExpLiteral } from '@babel/types';
 
 class Main extends Component {
   state = {
@@ -11,6 +12,8 @@ class Main extends Component {
   }
 
   deleteNoteKey = key => {
+    this.state.noteArray.splice(key, 1);
+    this.setState({noteArray: this.state.noteArray});
   }
 
   addNote = () => {
@@ -34,13 +37,14 @@ class Main extends Component {
   }
 
   render() {
+    const {noteArray, noteText} = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerText}>- NOTER -</Text>
         </View>
         <ScrollView style={styles.scrollContainer}>
-          {this.displayNotes(this.state.noteArray)}
+          {this.displayNotes(noteArray)}
         </ScrollView>
 
         <View style={styles.footer}>
@@ -50,7 +54,7 @@ class Main extends Component {
             placeholderTextColor='white' 
             underlineColorAndroid='transparent'
             onChangeText={(noteText) => this.setState({noteText})}
-            value={this.state.noteText}
+            value={noteText}
           >
 
           </TextInput>

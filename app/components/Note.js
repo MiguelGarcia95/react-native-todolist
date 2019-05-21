@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
-const Note = ({keyval, val, deleteMethod}) => {
-  return (
+const Note = ({keyval,val, deleteMethod}) => {
+  return ( 
     <View key={keyval} style={styles.note}>
       <Text style={styles.noteText}>{val.date}</Text>
       <Text style={styles.noteText}>{val.text}</Text>
@@ -17,7 +17,7 @@ const Note = ({keyval, val, deleteMethod}) => {
 
 const styles = StyleSheet.create({
   note: {
-    position: 'absolute',
+    position: 'relative',
     padding: 20,
     paddingRight: 100,
     borderBottomWidth: 2,
