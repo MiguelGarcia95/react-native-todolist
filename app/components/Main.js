@@ -14,7 +14,14 @@ class Main extends Component {
   }
 
   addNote = () => {
-    alert('text')
+    if (this.state.noteText) {
+      let d = new Date();
+      let noteArray = this.state.noteArray.push({
+        'date': `${ d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`,
+        text: this.state.noteText
+      })
+      this.setState({noteArray, noteText: ''});
+    }
   }
 
   displayNotes = (notes) => {
